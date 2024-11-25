@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Əmlak tipini redaktə et</h1>
+        <h1>Rezervasiya siyasətini redaktə et</h1>
         <label for="">Ad: </label><input type="text" name="name" id="name" v-model="name">
         <button @click="edit">Yadda saxla</button>
         <button @click="delet">Sil</button>
@@ -14,12 +14,12 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 let name = ""
 async function edit() {
-    await api("property-types/edit", { id: route.params.id, newName: name })
-    router.push({ path: "/property-types" })
+    await api("reservation-policies/edit", { id: route.params.id, newName: name })
+    router.push({ path: "/reservation-policies" })
 }
 async function delet() {
-    await api("property-types/delete", { id: route.params.id })
-    router.push({ path: "/property-types" })
+    await api("reservation-policies/delete", { id: route.params.id })
+    router.push({ path: "/reservation-policies" })
 }
 </script>
 

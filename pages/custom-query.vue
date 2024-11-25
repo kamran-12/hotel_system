@@ -5,16 +5,21 @@
 </template>
 
 <script setup lang="ts">
-let query = ""
-let response: any = ""
-let send = async function() {
+import { ref } from 'vue'
+let query = ref("")
+let response = ref("")
+let send = async function () {
     try {
-        let res = await api('custom-query', { query })
-        response = res
+        let res = await api('custom-query', { query: query.value })
+        response.value = res
     } catch (error) {
-        response = error
+        response.value = error
     }
 }
 </script>
 
-<style></style>
+<style>
+textarea {
+    display: block
+}
+</style>

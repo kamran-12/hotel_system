@@ -1,6 +1,6 @@
 <template>
     <form @submit.prevent="send">
-        <h1>Əmlak tipi əlavə et</h1>
+        <h1>Rezervasiya siyasətini əlavə et</h1>
         <label for="">Ad: </label><input type="text" name="name" id="name" v-model="name">
         <button type="submit">Əlavə et</button>
     </form>
@@ -11,8 +11,8 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 let name = ""
 async function send() {
-    await api("property-types/add", { name })
-    router.push({ path: "/property-types" })
+    await api("reservation-policies/add", { name })
+    router.push({ path: "/reservation-policies" })
 }
 </script>
 
