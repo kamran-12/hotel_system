@@ -27,6 +27,7 @@ http://localhost:3000/ ünvanını açın.
 CREATE TABLE `hotel_system`.`property_type` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45) NULL,
+    notes VARCHAR(999),
     PRIMARY KEY (`id`),
     UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
 );
@@ -34,6 +35,7 @@ CREATE TABLE `hotel_system`.`property_type` (
 CREATE TABLE `hotel_system`.`meal_option` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45) NULL,
+    notes VARCHAR(999),
     PRIMARY KEY (`id`),
     UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
 );
@@ -41,6 +43,7 @@ CREATE TABLE `hotel_system`.`meal_option` (
 CREATE TABLE `hotel_system`.`reservation_policy` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45) NULL,
+    notes VARCHAR(999),
     PRIMARY KEY (`id`),
     UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
 );
@@ -48,6 +51,7 @@ CREATE TABLE `hotel_system`.`reservation_policy` (
 CREATE TABLE `hotel_system`.`smoking_room_option` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45) NULL,
+    notes VARCHAR(999),
     PRIMARY KEY (`id`),
     UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
 );
@@ -91,6 +95,8 @@ CREATE TABLE room (
     id int NOT NULL AUTO_INCREMENT,
     property_id int,
     room_name varchar(45),
+    room_number int,
+    floor_number int,
     meal_option_id int,
     kitchen_available boolean,
     reservation_policy_id int,

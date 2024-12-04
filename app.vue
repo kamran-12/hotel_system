@@ -1,4 +1,5 @@
 <template>
-    <NuxtLink to="/">Əsas səhifə</NuxtLink>
-    <NuxtPage />
+    <NuxtLayout>
+        <NuxtPage />
+    </NuxtLayout>
 </template>

@@ -1,10 +1,10 @@
 import { default as db } from "../../database.js";
 
 export default defineEventHandler(async (event) => {
-    let { id, newName } = await readBody(event)
-    newName = newName.trim()
+    let { id, name, notes } = await readBody(event);
+    [name, notes] = [name.trim(), notes.trim()]
     id = parseInt(id)
-    if (!newName.length) throw createError({ statusCode: 422, statusMessage: 'no_name' })
-    await db.execute("UPDATE smoking_room_option SET name=? WHERE id=?", [newName, id])
+    if (!name.length) throw createError({ statusCode: 422, statusMessage: 'no_name' })
+    await db.execute("UPDATE smoking_room_option SET name=?, notes=? WHERE id=?", [name, notes, id])
     return { message: 'updated' }
 })
