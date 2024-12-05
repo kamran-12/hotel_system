@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useHead } from '#app'
-import type { NuxtError } from '#app'
+import { useHead } from '#app';
+import type { NuxtError } from '#app';
 
 const props = defineProps<{
     error: NuxtError
@@ -23,25 +23,5 @@ useHead({
 </template>
 
 <style scoped>
-.error-container {
-    font-family: Helvetica, Arial, sans-serif;
-    padding: 40px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-button {
-    font-size: 16px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
+@import "./assets/css/error.css";
 </style>

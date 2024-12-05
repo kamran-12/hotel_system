@@ -84,10 +84,10 @@ CREATE TABLE property (
     distance_from_center float(12),
     description varchar(2000),
     PRIMARY KEY (id),
-    FOREIGN KEY (property_type_id) REFERENCES property_type(id),
-    FOREIGN KEY (meal_option_policy_id) REFERENCES meal_option(id),
-    FOREIGN KEY (reservation_policy_id) REFERENCES reservation_policy(id),
-    FOREIGN KEY (smoking_room_option_id) REFERENCES smoking_room_option(id),
+    FOREIGN KEY (property_type_id) REFERENCES property_type(id) ON DELETE RESTRICT,
+    FOREIGN KEY (meal_option_policy_id) REFERENCES meal_option(id) ON DELETE RESTRICT,
+    FOREIGN KEY (reservation_policy_id) REFERENCES reservation_policy(id) ON DELETE RESTRICT,
+    FOREIGN KEY (smoking_room_option_id) REFERENCES smoking_room_option(id) ON DELETE RESTRICT,
     UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
 );
 
@@ -108,10 +108,10 @@ CREATE TABLE room (
     air_conditioning boolean,
     washing_machine boolean,
     PRIMARY KEY (id),
-    FOREIGN KEY (property_id) REFERENCES property(id),
-    FOREIGN KEY (meal_option_id) REFERENCES meal_option(id),
-    FOREIGN KEY (reservation_policy_id) REFERENCES reservation_policy(id),
-    FOREIGN KEY (smoking_room_option_id) REFERENCES smoking_room_option(id),
+    FOREIGN KEY (property_id) REFERENCES property(id) ON DELETE RESTRICT,
+    FOREIGN KEY (meal_option_id) REFERENCES meal_option(id) ON DELETE RESTRICT,
+    FOREIGN KEY (reservation_policy_id) REFERENCES reservation_policy(id) ON DELETE RESTRICT,
+    FOREIGN KEY (smoking_room_option_id) REFERENCES smoking_room_option(id) ON DELETE RESTRICT,
     UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
 )
 

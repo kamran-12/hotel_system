@@ -1,0 +1,43 @@
+th {
+    background-color: rgb(80, 80, 224);
+    color: white;
+}
+
+table,
+tr,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+th,
+td {
+    padding: 8px;
+}
+
+tr {
+    background-color: rgb(232, 232, 232);
+}
+
+tr:hover {
+    background-color: rgb(242, 241, 241);
+}
+
+input[type=checkbox] {
+    transform: scale(1.8);
+    margin: 0 8px;
+}
+
+input[type=text] {
+    margin: -8px;
+    font-size: 20px;
+    padding: 6px;
+}
+
+img {
+    height: 20px;
+    margin: 0px 11px -4px 11px;
+    cursor: default;
+}

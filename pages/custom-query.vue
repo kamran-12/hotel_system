@@ -1,5 +1,5 @@
 <template>
-    <textarea name="query" id="query" v-model="query"></textarea>
+    <textarea style="display:block" name="query" id="query" v-model="query"></textarea>
     <button @click="send">Göndər</button>
     <div id="response">{{ response }}</div>
 </template>
@@ -17,9 +17,3 @@ let send = async function () {
     }
 }
 </script>
-
-<style>
-textarea {
-    display: block
-}
-</style>

@@ -1,0 +1,8 @@
+.property {
+    padding: 12px;
+    margin: 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    width: 160px;
+    display: inline-block;
+}
