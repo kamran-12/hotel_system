@@ -1,6 +1,6 @@
 <template>
-    <h1>Əmlakın redaktəsi</h1>
-    <PropertyEditor :id="route.params.id"/>
+    <h1>Otağın redaktəsi</h1>
+    <RoomEditor :id="route.params.id"/>
 </template>
 
 <script setup>

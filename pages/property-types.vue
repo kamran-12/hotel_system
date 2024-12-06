@@ -3,5 +3,5 @@
     <OptionsTable optionName="property-types"/>
 </template>
 
-<script setup lang="ts">
+<script setup>
 </script>

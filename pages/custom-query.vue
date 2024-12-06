@@ -4,7 +4,7 @@
     <div id="response">{{ response }}</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 let query = ref("")
 let response = ref("")

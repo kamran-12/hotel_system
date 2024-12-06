@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 let props = defineProps(["header", "body", "buttons"])
 </script>
 

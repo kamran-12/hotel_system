@@ -1,7 +1,7 @@
 <template>
   <button :class="color" @click.prevent="emit('click')">{{text}}</button>
 </template>
-<script setup lang="ts">
+<script setup>
 let props = defineProps(["color", "text"])
 let emit = defineEmits(['click'])
 </script>

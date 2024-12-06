@@ -14,13 +14,14 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const links = [
     { url: "/property-types", name: "Əmlak tipləri" },
     { url: "/meal-options", name: "Yemək variantları" },
     { url: "/reservation-policies", name: "Rezervasiya siyasətləri" },
     { url: "/smoking-room-options", name: "Siqaret otağı variantları" },
     { url: "/properties", name: "Əmlaklar" },
+    { url: "/rooms", name: "Otaqlar" },
     { url: "/custom-query", name: "Fərdi sorğu" }
 ]
 </script>

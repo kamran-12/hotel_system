@@ -3,5 +3,5 @@
     <OptionsTable optionName="smoking-room-options"/>
 </template>
 
-<script setup lang="ts">
+<script setup>
 </script>

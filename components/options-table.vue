@@ -28,7 +28,7 @@
     <Transition><Dialog v-if="dialog" v-bind="dialog" /></Transition>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const props = defineProps(['optionName'])
 import { ref } from 'vue'
 let options = ref([]);

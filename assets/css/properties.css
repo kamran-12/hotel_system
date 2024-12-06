@@ -6,3 +6,8 @@
     width: 160px;
     display: inline-block;
 }
+
+.room {
+    display: inline-block;
+    padding: 10px;
+}

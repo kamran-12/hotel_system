@@ -3,5 +3,5 @@
     <OptionsTable optionName="reservation-policies"/>
 </template>
 
-<script setup lang="ts">
+<script setup>
 </script>

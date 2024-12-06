@@ -3,7 +3,7 @@
         <tr>
             <td>Növü:</td>
             <td><select v-model="propertyData.property_type_id">
-                    <option v-for="x in options.propertyTypes" :value="x.id"
+                    <option :disabled="x.disabled" v-for="x in options?.propertyTypes" :value="x.id"
                         :selected="x.id == propertyData?.property_type_id">{{ x.name }}</option>
                 </select></td>
         </tr>
@@ -22,7 +22,7 @@
         <tr>
             <td>Yemək variantları:</td>
             <td><select v-model="propertyData.meal_option_policy_id">
-                    <option v-for="x in options.mealOptions" :value="x.id"
+                    <option :disabled="x.disabled" v-for="x in options?.mealOptions" :value="x.id"
                         :selected="x.id == propertyData?.meal_option_policy_id">{{ x.name }}</option>
                 </select></td>
         </tr>
@@ -33,7 +33,7 @@
         <tr>
             <td>Rezervasiya siyasəti:</td>
             <td><select v-model="propertyData.reservation_policy_id">
-                    <option v-for="x in options.reservationPolicies" :value="x.id"
+                    <option :disabled="x.disabled" v-for="x in options?.reservationPolicies" :value="x.id"
                         :selected="x.id == propertyData?.reservation_policy_id">{{ x.name }}</option>
                 </select></td>
         </tr>
@@ -64,7 +64,7 @@
         <tr>
             <td>Siqaret otağı variantı:</td>
             <td><select v-model="propertyData.smoking_room_option_id">
-                    <option v-for="x in options.smokingRoomOptions" :value="x.id"
+                    <option :disabled="x.disabled" v-for="x in options?.smokingRoomOptions" :value="x.id"
                         :selected="x.id == propertyData?.smoking_room_option_id">{{ x.name }}</option>
                 </select></td>
         </tr>
@@ -120,7 +120,7 @@
     </Transition>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 const props = defineProps(["id"])
@@ -186,7 +186,7 @@ if (props.id) {
     
 } else { 
     for (const [key, value] of Object.entries(options.value)) {
-        options.value[key] = [{ name: "---Seçin---", id: null }, ...value]
+        options.value[key] = [{ name: "Seçin", id: null, disabled: true }, ...value]
     }
 }
 async function save() {

@@ -1,10 +1,7 @@
-<script setup lang="ts">
+<script setup>
 import { useHead } from '#app';
-import type { NuxtError } from '#app';
 
-const props = defineProps<{
-    error: NuxtError
-}>()
+const props = defineProps(["error"])
 
 useHead({
     title: `Error ${props.error.statusCode}`,
