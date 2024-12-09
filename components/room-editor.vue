@@ -168,7 +168,6 @@ async function delet() {
                     } catch (error) {
                         dialog.value = { header: "Xəta", body: error, buttons: [{ color: "main", text: "Anladım", action: () => { dialog.value = null } }] }
                     }
-                    load()
                 }
             },
             {

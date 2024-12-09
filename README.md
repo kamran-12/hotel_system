@@ -113,7 +113,49 @@ CREATE TABLE room (
     FOREIGN KEY (reservation_policy_id) REFERENCES reservation_policy(id) ON DELETE RESTRICT,
     FOREIGN KEY (smoking_room_option_id) REFERENCES smoking_room_option(id) ON DELETE RESTRICT,
     UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
-)
+);
+
+CREATE TABLE admin (
+    id int NOT NULL AUTO_INCREMENT,
+    username varchar(45),
+    password varchar(128),
+    PRIMARY KEY (id),
+    UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
+);
+
+CREATE TABLE user (
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(45),
+    surname varchar(45),
+    email varchar(60),
+    phone varchar(25),
+    password varchar(128),
+    PRIMARY KEY (id),
+    UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
+);
+
+CREATE TABLE booking (
+    id int NOT NULL AUTO_INCREMENT,
+    checkin DATE,
+    checkout DATE,
+    room_id int,
+    user_id int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (room_id) REFERENCES room(id) ON DELETE RESTRICT,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE RESTRICT,
+    UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
+);
+
+CREATE TABLE session (
+    id int NOT NULL AUTO_INCREMENT,
+    hashed_token varchar(56),
+    user_id int,
+    admin_id int,
+    start_date TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
+    FOREIGN KEY (admin_id) REFERENCES admin(id) ON DELETE CASCADE,
+    UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
+);
 
 ```
 

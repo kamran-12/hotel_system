@@ -10,8 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "argon2": "^0.41.1",
     "mysql2": "^3.11.4",
     "nuxt": "^3.14.1592",
+    "phone": "^3.1.55",
     "vue": "latest",
     "vue-router": "latest"
   }
