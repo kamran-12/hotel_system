@@ -1,7 +1,9 @@
 import { default as db } from "../../database.js";
+import { phone } from "phone";
 
 export default defineEventHandler(async (event) => {
-    let { name, surname, email, phoneNumber, id } = await readBody(event);
+    let { name, surname, email, id } = await readBody(event);
+    let phoneNumber = (await readBody(event)).phone;
     if (event.context.account_type != "admin" && id != "me") throw createError({ statusCode: 401, statusMessage: 'unauthorized' })
     if (id == "me") id = event.context.account_id;
     [name, surname, email, phoneNumber] = [name.trim(), surname.trim(), email.trim(), phoneNumber.trim()]

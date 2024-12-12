@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
         const hash = crypto.createHash('sha256');
         hash.update(authToken);
         let hashedToken = hash.digest('base64').substring(0, 20);
-        await db.execute("INSERT INTO session (hashed_token, user_id, start_date) VALUES (?, ?, ?)", [hashedToken, user.id, Date.now()])
+        await db.execute("INSERT INTO session (hashed_token, user_id, start_date) VALUES (?, ?, ?)", [hashedToken, user.id, new Date()])
         return { authToken, user_id: user.id, full_name: `${user.name} ${user.surname}` }
     } else {
         throw createError({ statusCode: 422, statusMessage: "wrong_password" })

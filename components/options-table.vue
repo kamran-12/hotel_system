@@ -94,11 +94,11 @@ function deleteSelected() {
                     let ids = selected.map(option => option.id)
                     try {
                         await api(`${props.optionName}/delete`, { ids })
+                        dialog.value = null;
+                        load()
                     } catch (error) {
                         showError(error)
                     }
-                    dialog.value = null;
-                    load()
                 }
             }, {
                 text: "İmtina",

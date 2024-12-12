@@ -22,6 +22,9 @@ const links = [
     { url: "/smoking-room-options", name: "Siqaret otağı variantları" },
     { url: "/properties", name: "Əmlaklar" },
     { url: "/rooms", name: "Otaqlar" },
+    { url: "/admins", name: "Adminlər" },
+    { url: "/users", name: "İstifadəçilər" },
+    { url: "/bookings", name: "Rezervasiyalar" },
     { url: "/custom-query", name: "Fərdi sorğu" }
 ]
 </script>

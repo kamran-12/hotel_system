@@ -1,10 +1,11 @@
 import { default as db } from "../../database.js";
 import argon2 from 'argon2';
-import { phone } from 'phone';
+import { phone  } from 'phone';
 import crypto from 'crypto';
 
 export default defineEventHandler(async (event) => {
-    let { name, surname, email, phoneNumber, password } = await readBody(event);
+    let { name, surname, email, password } = await readBody(event);
+    let phoneNumber = (await readBody(event)).phone;
     [name, surname, email, phoneNumber] = [name.trim(), surname.trim(), email.trim(), phoneNumber.trim()]
     if (!name.length || name.length > 20) throw createError({ statusCode: 422, statusMessage: 'no_name' })
     if (!surname.length || surname.length > 20) throw createError({ statusCode: 422, statusMessage: 'no_surname' })
@@ -17,6 +18,6 @@ export default defineEventHandler(async (event) => {
     const hash = crypto.createHash('sha256');
     hash.update(authToken);
     let hashedToken = hash.digest('base64').substring(0, 20);
-    await db.execute("INSERT INTO session (hashed_token, user_id, start_date) VALUES (?, ?, ?)", [hashedToken, result.insertId, Date.now()])
+    await db.execute("INSERT INTO session (hashed_token, user_id, start_date) VALUES (?, ?, ?)", [hashedToken, result.insertId, new Date()])
     return { authToken, user_id: result.insertId, full_name: `${name} ${surname}` }
 })
